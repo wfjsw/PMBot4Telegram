@@ -30,7 +30,7 @@ tg.on('message', function (msg) {
             return;
         }
         if (msg.reply_to_message.from.id == tgid && msg.reply_to_message.forward_from && msg.reply_to_message.forward_from != config.sudo_user) {
-            tg.forwardMessage(msg.reply_to_message.forward_from, msg.chat.id, msg.message_id);
+            tg.forwardMessage(msg.reply_to_message.forward_from.id, msg.chat.id, msg.message_id);
             return;
         }
     } else {
@@ -38,13 +38,8 @@ tg.on('message', function (msg) {
             tg.sendMessage(msg.from.id, "Greeting! This is a pseudo communicating tunnel to @wfjsw \n\nNo help is available. Say anything you want here.\nDO NOT USE FORWARD HERE!");
             return; 
         } 
-        if (msg.forward_from.id && msg.forward_from.id != msg.from.id) {
-            console.log("invaild forward");
-            tg.sendMessage(msg.from.id, "*DO NOT USE FORWARD HERE!*", { reply_to_message_id: msg.message_id, parse_mode: 'Markdown' });
-        } else {
-            console.log("proceed forward");
-            tg.forwardMessage(config.sudo_user, msg.chat.id, msg.message_id);
-        }
+        console.log("proceed forward");
+        tg.forwardMessage(config.sudo_user, msg.chat.id, msg.message_id);
     }
 });
 
