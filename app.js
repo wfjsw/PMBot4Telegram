@@ -10,9 +10,11 @@ var config = require('./config.js');
 var tg = new Telegram(config.tg_bot_api_key, { polling: true });
 
 var tgid, tgusername;
-
+var inittime = Math.round(new Date().getTime() / 1000);
 
 tg.on('message', function (msg) {
+    if (msg.date < inittime)
+        return;
     console.log(msg);
     if (msg.text == "/version") {
         tg.sendMessage(msg.from.id, version, { parse_mode: 'Markdown' });
