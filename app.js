@@ -13,6 +13,13 @@ var tgid, tgusername;
 
 
 tg.on('message', function (msg) {
+    if (msg.text == "/version") {
+        tg.sendMessage(msg.from.id, version, { parse_mode: 'Markdown' });
+        return;
+    } else if (msg.text == "SYN") {
+        tg.sendMessage(msg.from.id, "`ACK`", { parse_mode: 'Markdown' });
+        return; 
+    }
     if (msg.from.id = config.sudo_user) {
         // ADMIN AREA
         if (msg.text.split(' ')[0] == "/replyto") {
@@ -24,6 +31,10 @@ tg.on('message', function (msg) {
             return;
         }
     } else {
+        if (msg.text == "/start" || msg.text == "/help") {
+            tg.sendMessage(msg.from.id, "Greeting! This is a pseudo communicating tunnel to @wfjsw \n\nNo help is available. Say anything you want here.\nDO NOT USE FORWARD HERE!");
+            return; 
+        } 
         if (msg.forward_from.id != msg.from.id) {
             tg.sendMessage(msg.from.id, "*DO NOT USE FORWARD HERE!*", { reply_to_message_id: msg.id, parse_mode: 'Markdown' });
             return;
