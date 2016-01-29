@@ -45,8 +45,8 @@ tg.on('message', function (msg) {
 
 
 tg.getMe().then(function (ret) {
-    tgid = ret.result.id;
-    tgusername = ret.result.username;
+    tgid = ret.id;
+    tgusername = ret.username;
     console.log('PROJECT JABASUKURIPUTO INITATED');
     tg.sendMessage(config.sudo_user, "`GREETINGS!`\n`PROJECT JABASUKURIPUTO INITATED`", { reply_to_message_id: msg.id, parse_mode: 'Markdown' });
 })
