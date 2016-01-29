@@ -1,0 +1,13 @@
+{
+  "name": "PMBot4Telegram",
+  "version": "0.0.0",
+  "description": "PMBot4Telegram",
+  "main": "app.js",
+  "author": {
+    "name": "admin_000",
+    "email": ""
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.19.2"
+  }
+}
