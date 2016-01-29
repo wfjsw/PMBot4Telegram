@@ -30,7 +30,7 @@ tg.on('message', function (msg) {
             return;
         }
         if (msg.reply_to_message.from.id == tgid && msg.reply_to_message.forward_from && msg.reply_to_message.forward_from != config.sudo_user) {
-            tg.forwardMessage(msg.reply_to_message.forward_from, msg.chat.id, msg.id);
+            tg.forwardMessage(msg.reply_to_message.forward_from, msg.chat.id, msg.message_id);
             return;
         }
     } else {
@@ -39,10 +39,10 @@ tg.on('message', function (msg) {
             return; 
         } 
         if (msg.forward_from.id != msg.from.id) {
-            tg.sendMessage(msg.from.id, "*DO NOT USE FORWARD HERE!*", { reply_to_message_id: msg.id, parse_mode: 'Markdown' });
+            tg.sendMessage(msg.from.id, "*DO NOT USE FORWARD HERE!*", { reply_to_message_id: msg.message_id, parse_mode: 'Markdown' });
             return;
         }
-        tg.forwardMessage(config.sudo_user, msg.chat.id, msg.id);
+        tg.forwardMessage(config.sudo_user, msg.chat.id, msg.message_id);
     }
 });
 
