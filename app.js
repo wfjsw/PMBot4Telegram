@@ -38,11 +38,13 @@ tg.on('message', function (msg) {
             tg.sendMessage(msg.from.id, "Greeting! This is a pseudo communicating tunnel to @wfjsw \n\nNo help is available. Say anything you want here.\nDO NOT USE FORWARD HERE!");
             return; 
         } 
-        if (msg.forward_from.id != msg.from.id) {
+        if (msg.forward_from.id && msg.forward_from.id != msg.from.id) {
+            console.log("invaild forward");
             tg.sendMessage(msg.from.id, "*DO NOT USE FORWARD HERE!*", { reply_to_message_id: msg.message_id, parse_mode: 'Markdown' });
-            return;
+        } else {
+            console.log("proceed forward");
+            tg.forwardMessage(config.sudo_user, msg.chat.id, msg.message_id);
         }
-        tg.forwardMessage(config.sudo_user, msg.chat.id, msg.message_id);
     }
 });
 
