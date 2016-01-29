@@ -26,7 +26,7 @@ tg.on('message', function (msg) {
     if (msg.from.id == config.sudo_user) {
         // ADMIN AREA
         if (msg.text.split(' ')[0] == "/replyto") {
-            tg.forwardMessage(msg.text.split(' ')[1], msg.chat.id, msg.reply_to_message.id);
+            tg.forwardMessage(msg.text.split(' ')[1], msg.chat.id, msg.reply_to_message.message_id);
             return;
         }
         if (msg.reply_to_message.from.id == tgid && msg.reply_to_message.forward_from && msg.reply_to_message.forward_from != config.sudo_user) {
