@@ -13,6 +13,7 @@ var tgid, tgusername;
 
 
 tg.on('message', function (msg) {
+    console.log(msg);
     if (msg.text == "/version") {
         tg.sendMessage(msg.from.id, version, { parse_mode: 'Markdown' });
         return;
@@ -45,6 +46,7 @@ tg.on('message', function (msg) {
 
 
 tg.getMe().then(function (ret) {
+    console.log(ret);
     tgid = ret.id;
     tgusername = ret.username;
     console.log('PROJECT JABASUKURIPUTO INITATED');
