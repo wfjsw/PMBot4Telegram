@@ -20,7 +20,7 @@ tg.on('message', function (msg) {
         tg.sendMessage(msg.from.id, "`ACK`", { parse_mode: 'Markdown' });
         return; 
     }
-    if (msg.from.id = config.sudo_user) {
+    if (msg.from.id == config.sudo_user) {
         // ADMIN AREA
         if (msg.text.split(' ')[0] == "/replyto") {
             tg.forwardMessage(msg.text.split(' ')[1], msg.chat.id, msg.reply_to_message.id);
