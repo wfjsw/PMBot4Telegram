@@ -11,7 +11,7 @@
     "email": "wfjsw@users.noreply.github.com"
   },
   "dependencies": {
-    "node-telegram-bot-api": "^0.19.2"
+    "node-telegram-bot-api": "^0.21.1"
   },
   "engines": {
     "node": "5.7.1"

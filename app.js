@@ -13,8 +13,9 @@ var config = {
      hookuri : process.env.HOOK_URI + '/bot' + process.env.BOT_TOKEN
 };
 
+console.log('Listening on ' + config.hookport);
 
-var tg = new Telegram(config.tg_bot_api_key, { webhook: { host: '0.0.0.0', port: config.hookport } } );
+var tg = new Telegram(config.tg_bot_api_key, { webHook: { host: '0.0.0.0', port: config.hookport } } );
 
 var tgid, tgusername;
 var inittime = Math.round(new Date().getTime() / 1000);
@@ -65,10 +66,3 @@ tg.getMe().then(function (ret) {
     console.log('PROJECT PMBOT-HEROKU INITATED');
     tg.sendMessage(config.sudo_user, "`GREETINGS!`\n`PROJECT PMBOT-HEROKU INITATED`", { parse_mode: 'Markdown' });
 });
-
-// Loop hack
-
-function wait() {
-    if (!false) setTimeout(wait, 1000);
-}
-setTimeout(wait, 1000);
