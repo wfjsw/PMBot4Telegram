@@ -64,10 +64,11 @@ tg.getMe().then(function (ret) {
     tg.setWebHook(config.hookuri);
     console.log('PROJECT PMBOT-HEROKU INITATED');
     tg.sendMessage(config.sudo_user, "`GREETINGS!`\n`PROJECT PMBOT-HEROKU INITATED`", { parse_mode: 'Markdown' });
-})
+});
 
 // Loop hack
 
-(function wait() {
+function wait() {
     if (!false) setTimeout(wait, 1000);
-})();
+}
+setTimeout(wait, 1000);
