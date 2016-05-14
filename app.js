@@ -14,7 +14,7 @@ var config = {
 };
 
 
-var tg = new Telegram(config.tg_bot_api_key, { webhook: { port: config.hookport } });
+var tg = new Telegram(config.tg_bot_api_key, { webhook: { host: '0.0.0.0', port: config.hookport } } );
 
 var tgid, tgusername;
 var inittime = Math.round(new Date().getTime() / 1000);
