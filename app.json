@@ -9,7 +9,7 @@
   "env": {
     "BOT_TOKEN": {
       "description": "Access token given by @BotFather.",
-      "generator": "12345678:ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      "value": "12345678:ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     },
     "ADMIN_ID": {
       "description": "The id of admin(you) to receive all PM message.",
