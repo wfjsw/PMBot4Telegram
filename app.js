@@ -65,3 +65,9 @@ tg.getMe().then(function (ret) {
     console.log('PROJECT PMBOT-HEROKU INITATED');
     tg.sendMessage(config.sudo_user, "`GREETINGS!`\n`PROJECT PMBOT-HEROKU INITATED`", { parse_mode: 'Markdown' });
 })
+
+// Loop hack
+
+(function wait() {
+    if (!false) setTimeout(wait, 1000);
+})();
