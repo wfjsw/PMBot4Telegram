@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "Telegram PM Bot",
   "description": "This bot creates an pusedo-tunnel between two chat participant in order to get rid of Report Spam limit.",
   "keywords": [
@@ -18,7 +18,7 @@
     "HOOK_URI": {
       "description": "The webhook URI to pass on setWebHook.",
       "value": "https://your-app-name.herokuapp.com"
-    },
+    }
   },
   "formation": {
     "web": {
