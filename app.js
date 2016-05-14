@@ -51,7 +51,10 @@ tg.on('message', function (msg) {
 });
 
 process.on('unhandledRejection', function (reason, p) {
-    console.error('err caught: ' + reason + '  ' + p);
+    console.log('reject caught: ' + reason + '  ' + p);
+    p.catch(function (err) {
+        console.log('err caught: ' + err);
+    });
 });
 
 tg.getMe().then(function (ret) {
