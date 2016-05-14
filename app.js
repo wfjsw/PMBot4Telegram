@@ -50,12 +50,8 @@ tg.on('message', function (msg) {
     }
 });
 
-/*process.on('uncaughtException', function (err) {
-    console.log('Caught exception: ' + err);
-});*/
-
-tg.on('error', function (err) {
-    console.log('Caught exception: ' + err);
+process.on('unhandledRejection', function (reason, p) {
+    console.error('err caught: ' + reason + '  ' + p);
 });
 
 tg.getMe().then(function (ret) {
