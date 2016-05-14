@@ -1,0 +1,34 @@
+﻿{
+  "name": "Telegram PM Bot",
+  "description": "This bot creates an pusedo-tunnel between two chat participant in order to get rid of Report Spam limit.",
+  "keywords": [
+    "Telegram",
+    "Bot"
+  ],
+  "repository": "https://github.com/wfjsw/PMBot4Telegram",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Access token given by @BotFather.",
+      "generator": "12345678:ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    },
+    "ADMIN_ID": {
+      "description": "The id of admin(you) to receive all PM message.",
+      "value": "12345678"
+    },
+    "HOOK_URI": {
+      "description": "The webhook URI to pass on setWebHook.",
+      "value": "https://your-app-name.herokuapp.com"
+    },
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+    }
+  },
+  "image": "heroku/nodejs",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

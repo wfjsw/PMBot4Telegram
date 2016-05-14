@@ -1,13 +1,19 @@
 {
   "name": "PMBot4Telegram",
-  "version": "0.0.0",
-  "description": "PMBot4Telegram",
+  "version": "0.2.0",
+  "description": "PMBot4Telegram for heroku",
   "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
   "author": {
-    "name": "admin_000",
-    "email": ""
+    "name": "wfjsw",
+    "email": "wfjsw@users.noreply.github.com"
   },
   "dependencies": {
     "node-telegram-bot-api": "^0.19.2"
+  },
+  "engines": {
+    "node": "5.7.1"
   }
 }
